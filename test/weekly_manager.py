@@ -1,12 +1,12 @@
 # src/weekly_manager.py
 from collections import defaultdict
 from typing import Dict, List, Any
-from src.client import NotionClient
-from src.renderers import NotionPageFormatter, NotionBlockRenderer
-from src.date_utils import DateUtils
-from src.exceptions import NotionAPIError
-from src.ai_summarizer import ReportSummarizer
-from src.report_generator import WeeklyReportGenerator
+from test.client import NotionClient
+from test.renderers import NotionPageFormatter, NotionBlockRenderer
+from test.date_utils import DateUtils
+from test.exceptions import NotionAPIError
+from test.ai_summarizer import ReportSummarizer
+from test.report_generator import WeeklyReportGenerator
 
 
 class WeeklyManager:
