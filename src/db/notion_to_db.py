@@ -57,15 +57,11 @@ def get_text_from_block(block):
     if "rich_text" in block[block_type]:
         texts.extend([t["plain_text"] for t in block[block_type]["rich_text"]])
 
+    # Heading은 강조, 나머지는 일반 텍스트
     if block_type in ["heading_1", "heading_2", "heading_3"]:
-        texts = ["# " * int(block_type[-1]) + "".join(texts)]
-    elif block_type in ["bulleted_list_item", "numbered_list_item"]:
-        texts = ["- " + "".join(texts)]
-    elif block_type == "to_do":
-        checked = "✅" if block[block_type]["checked"] else "⬜"
-        texts = [f"{checked} " + "".join(texts)]
-
-    return "\n".join(texts)
+        return "\n\n" + "".join(texts).upper() + "\n"
+    else:
+        return "".join(texts)
 
 
 def get_all_blocks(block_id):
@@ -95,7 +91,7 @@ for page in results:
     date = page["properties"]["날짜"]["date"]
     date = date["start"] if date else None
 
-    # 내용
+    # 내용 (리스트 → 문자열)
     contents = get_all_blocks(page_id)
     content_text = "\n".join(c for c in contents if c.strip())
 
