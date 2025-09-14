@@ -3,8 +3,8 @@ import json
 import requests
 from typing import Optional, List, Dict, Any
 
-from src.config import APIConfig
-from src.exceptions import NotionAPIError
+from test.config import APIConfig
+from test.exceptions import NotionAPIError
 
 
 class NotionClient:
