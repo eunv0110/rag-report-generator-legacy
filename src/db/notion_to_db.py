@@ -355,14 +355,14 @@ def main():
 
     # 사용법 예시:
     # 1. 최근 일주일 페이지만 동기화 (기본)
-    # sync.sync_recent_pages(days=7)
+    sync.sync_recent_pages(days=7)
 
     # 2. 전체 페이지 동기화 (필요시)
     # sync.sync_all_pages()
 
     # 3. 데이터베이스 완전 초기화 (주의: 모든 데이터 삭제)
-    sync.reset_database()
-    sync.sync_all_pages()
+    # sync.reset_database()
+    # sync.sync_all_pages()
 
 
 if __name__ == "__main__":
