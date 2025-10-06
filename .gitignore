@@ -1,4 +1,6 @@
 .env
 .qodo
 __pycache__
-reports/
+reports
+src/rag/cache
+prompts
